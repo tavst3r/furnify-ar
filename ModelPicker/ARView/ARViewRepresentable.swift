@@ -28,7 +28,7 @@ struct ARViewRepresentable: UIViewRepresentable {
         } else {
             print("Unable to load modelEntity for: \(model.modelName)")
         }
-
+        
         DispatchQueue.main.async {
             modelConfirmedForPlacement = nil
         }
