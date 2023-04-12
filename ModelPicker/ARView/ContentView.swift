@@ -29,34 +29,34 @@ struct ContentView: View {
     // MARK: Body
     
     var body: some View {
-        ZStack(alignment: .top) {
-                    Button(role: .destructive) {
-                        shouldRemoveAllModels = true
-                    } label: {
-                        HStack {
-                            Image(systemName: "trash")
-                            Text("Remove All")
-                        }
-                    }
-                }
-        ZStack(alignment: .bottom) {
-            ARViewRepresentable(
-                modelConfirmedForPlacement: $modelConfirmedForPlacement,
-                        shouldRemoveAllModels: $shouldRemoveAllModels
-            )
+        VStack {
+            Button(role: .destructive) {
+                           shouldRemoveAllModels = true
+                       } label: {
+                           HStack {
+                               Image(systemName: "trash")
+                               Text("Remove All")
+                           }
+                       }
+            ZStack(alignment: .bottom) {
+                ARViewRepresentable(
+                    modelConfirmedForPlacement: $modelConfirmedForPlacement,
+                    shouldRemoveAllModels: $shouldRemoveAllModels
+                )
 
-            if isPlacementEnabled {
-                PlacementButtonView(
-                    isPlacementEnabled: $isPlacementEnabled,
-                    selectedModel: $selectedModel,
-                    modelConfirmedForPlacement: $modelConfirmedForPlacement
-                )
-            } else {
-                ModelPickerView(
-                    isPlacementEnabled: $isPlacementEnabled,
-                    selectedModel: $selectedModel,
-                    models: models
-                )
+                if isPlacementEnabled {
+                    PlacementButtonView(
+                        isPlacementEnabled: $isPlacementEnabled,
+                        selectedModel: $selectedModel,
+                        modelConfirmedForPlacement: $modelConfirmedForPlacement
+                    )
+                } else {
+                    ModelPickerView(
+                        isPlacementEnabled: $isPlacementEnabled,
+                        selectedModel: $selectedModel,
+                        models: models
+                    )
+                }
             }
         }
     }
