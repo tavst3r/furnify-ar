@@ -63,6 +63,5 @@ private extension CustomARView {
 
         scene.addAnchor(cameraAnchor)
     }
-
 }
 //

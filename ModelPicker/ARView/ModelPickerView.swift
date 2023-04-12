@@ -11,6 +11,7 @@ struct ModelPickerView: View {
     // MARK: - Properties
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
+//    @Binding var updateCounter : Bool
     
     var models: [Model]
     
@@ -34,6 +35,20 @@ struct ModelPickerView: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
+////                test-clear
+//                Button {
+//                    print("cleared")
+//                    updateCounter = true
+//                } label: {
+//                    Image(systemName: "trash")
+//                        .resizable()
+//                        .frame(height: 80)
+//                        .aspectRatio(1/1, contentMode: .fit)
+//                        .background( Color.white)
+//                        .cornerRadius(12)
+//                }
+//                .buttonStyle(PlainButtonStyle())
+////                test-clear
             }
         }
         .padding(20)

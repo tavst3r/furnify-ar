@@ -33,4 +33,9 @@ struct ARViewRepresentable: UIViewRepresentable {
             modelConfirmedForPlacement = nil
         }
     }
+////    test-clear
+//    func updateCounter(uiView: ARView) {
+//        uiView.scene.anchors.removeAll()
+//    }
+////    test-clear
 }
