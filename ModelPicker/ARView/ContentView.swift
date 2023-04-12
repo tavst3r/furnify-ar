@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var isPlacementEnabled = false
     @State private var selectedModel: Model?
     @State private var modelConfirmedForPlacement: Model?
+    @State private var shouldRemoveAllModels = false
 
     private var models: [Model] = {
         let fileManager = FileManager.default
@@ -28,9 +29,20 @@ struct ContentView: View {
     // MARK: Body
     
     var body: some View {
+        ZStack(alignment: .top) {
+                    Button(role: .destructive) {
+                        shouldRemoveAllModels = true
+                    } label: {
+                        HStack {
+                            Image(systemName: "trash")
+                            Text("Remove All")
+                        }
+                    }
+                }
         ZStack(alignment: .bottom) {
             ARViewRepresentable(
-                modelConfirmedForPlacement: $modelConfirmedForPlacement
+                modelConfirmedForPlacement: $modelConfirmedForPlacement,
+                        shouldRemoveAllModels: $shouldRemoveAllModels
             )
 
             if isPlacementEnabled {

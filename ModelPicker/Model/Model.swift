@@ -13,6 +13,20 @@ class Model {
 
     // MARK: - Properties
 
+    static let modelNames = [
+           "biplane",
+           "drummer",
+           "fender",
+           "gramophone",
+           "retrotv",
+           "robot",
+           "teapot",
+           "wateringcan",
+           "wheelbarrow",
+           "pat1",
+           "scaun1"
+       ]
+    
     var modelName: String
     var image: UIImage
     var modelEntity: ModelEntity?
@@ -34,6 +48,7 @@ class Model {
                 }
             } receiveValue: { modelEntity in
                 self.modelEntity = modelEntity
+                self.modelEntity?.name = modelName
                 print("Successfully loaded modelEntity for: \(modelName)")
             }
     }
