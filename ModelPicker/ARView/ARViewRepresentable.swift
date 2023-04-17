@@ -36,9 +36,9 @@ struct ARViewRepresentable: UIViewRepresentable {
             } else if let model = modelConfirmedForPlacement,
                       let modelEntity = model.modelEntity {
                 print("Adding model to scene: \(model.modelName)")
-//                let anchorEntity = AnchorEntity(plane: .any)
-//                anchorEntity.addChild(modelEntity .clone(recursive: true))
-//                uiView.scene.addAnchor(anchorEntity)
+                let anchorEntity = AnchorEntity(plane: .any)
+                anchorEntity.addChild(modelEntity .clone(recursive: true))
+                uiView.scene.addAnchor(anchorEntity)
 //                atat----------------------------------------------------------
 //            } else {
 //                print("Unable to load modelEntity for: \(model.modelName)")

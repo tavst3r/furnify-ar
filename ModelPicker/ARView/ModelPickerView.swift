@@ -16,6 +16,12 @@ struct ModelPickerView: View {
     
     // MARK: Body
     
+    init(isPlacementEnabled: Binding<Bool>, selectedModel: Binding<Model?>, models: [Model]) {
+            UIScrollView.appearance().bounces = false
+            self._isPlacementEnabled = isPlacementEnabled
+            self._selectedModel = selectedModel
+            self.models = models
+        }
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 30) {
@@ -36,9 +42,9 @@ struct ModelPickerView: View {
                 }
             }
             .background(Color.red.opacity(0.5))
-
+            
         }
-        .padding(.bottom,20)
+        .padding(10)
     }
 }
 //

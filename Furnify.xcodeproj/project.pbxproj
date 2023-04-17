@@ -27,10 +27,12 @@
 		07EF081724CB6F0D00556F10 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 07EF081624CB6F0D00556F10 /* FocusEntity */; };
 		07EF081924CB6F4400556F10 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF081824CB6F4400556F10 /* CustomARView.swift */; };
 		327C62E829DA259500FA2134 /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C62E729DA259500FA2134 /* TestView2.swift */; };
-		32871E1429DAEEC2004CD064 /* scaun1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 32871E1329DAEEC2004CD064 /* scaun1.usdz */; };
 		32BC000729D5956900E0C7C0 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC000629D5956900E0C7C0 /* TestView.swift */; };
+		32CAF7D829ED7ECA00725D76 /* pat2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 32CAF7D729ED7ECA00725D76 /* pat2.usdz */; };
+		32CAF7DA29ED7EDB00725D76 /* pat1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 32CAF7D929ED7EDB00725D76 /* pat1.usdz */; };
+		32CAF7DC29ED7EEA00725D76 /* scaun1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 32CAF7DB29ED7EEA00725D76 /* scaun1.usdz */; };
+		32CAF7DE29ED7EFA00725D76 /* masa1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 32CAF7DD29ED7EFA00725D76 /* masa1.usdz */; };
 		32CC4E8A29E42F4B0095EA52 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CC4E8929E42F4B0095EA52 /* SplashScreen.swift */; };
-		32F0688A29DA3D4800756F48 /* pat1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 32F0688929DA3D4800756F48 /* pat1.usdz */; };
 		32F71BA329D4702200CB8FDF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F71BA229D4702200CB8FDF /* MainView.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,10 +58,12 @@
 		07EF081324CB675200556F10 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		07EF081824CB6F4400556F10 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
 		327C62E729DA259500FA2134 /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
-		32871E1329DAEEC2004CD064 /* scaun1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = scaun1.usdz; path = ../../../../scaun1.usdz; sourceTree = "<group>"; };
 		32BC000629D5956900E0C7C0 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		32CAF7D729ED7ECA00725D76 /* pat2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = pat2.usdz; path = "../../../../Disertatie/Modele 3D/paturi/pat2/pat2.usdz"; sourceTree = "<group>"; };
+		32CAF7D929ED7EDB00725D76 /* pat1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = pat1.usdz; path = "../../../../Disertatie/Modele 3D/paturi/pat1/pat1.usdz"; sourceTree = "<group>"; };
+		32CAF7DB29ED7EEA00725D76 /* scaun1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = scaun1.usdz; path = "../../../../Disertatie/Modele 3D/scaune/scaun1/scaun1.usdz"; sourceTree = "<group>"; };
+		32CAF7DD29ED7EFA00725D76 /* masa1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = masa1.usdz; path = "../../../../Disertatie/Modele 3D/mese/masa1/masa1.usdz"; sourceTree = "<group>"; };
 		32CC4E8929E42F4B0095EA52 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
-		32F0688929DA3D4800756F48 /* pat1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = pat1.usdz; path = ../../../../pat1.usdz; sourceTree = "<group>"; };
 		32F71BA229D4702200CB8FDF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,8 +151,10 @@
 			isa = PBXGroup;
 			children = (
 				07D53B0924CB1F0200195440 /* biplane.usdz */,
-				32F0688929DA3D4800756F48 /* pat1.usdz */,
-				32871E1329DAEEC2004CD064 /* scaun1.usdz */,
+				32CAF7DD29ED7EFA00725D76 /* masa1.usdz */,
+				32CAF7D729ED7ECA00725D76 /* pat2.usdz */,
+				32CAF7D929ED7EDB00725D76 /* pat1.usdz */,
+				32CAF7DB29ED7EEA00725D76 /* scaun1.usdz */,
 				07D53B0224CB1F0200195440 /* drummer.usdz */,
 				07D53B0624CB1F0200195440 /* fender.usdz */,
 				07D53B0824CB1F0200195440 /* gramophone.usdz */,
@@ -217,7 +223,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 07D53AE124CB177B00195440 /* Build configuration list for PBXProject "ModelPicker2" */;
+			buildConfigurationList = 07D53AE124CB177B00195440 /* Build configuration list for PBXProject "Furnify" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -243,9 +249,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32CAF7DC29ED7EEA00725D76 /* scaun1.usdz in Resources */,
 				07D53B0B24CB1F0200195440 /* drummer.usdz in Resources */,
+				32CAF7DA29ED7EDB00725D76 /* pat1.usdz in Resources */,
 				07D53AF124CB177B00195440 /* Preview Assets.xcassets in Resources */,
 				07D53AEE24CB177B00195440 /* Assets.xcassets in Resources */,
+				32CAF7DE29ED7EFA00725D76 /* masa1.usdz in Resources */,
 				07D53B0F24CB1F0200195440 /* fender.usdz in Resources */,
 				07D53B0A24CB1F0200195440 /* wheelbarrow.usdz in Resources */,
 				07D53B0E24CB1F0200195440 /* wateringcan.usdz in Resources */,
@@ -254,8 +263,7 @@
 				07D53B1024CB1F0200195440 /* retrotv.usdz in Resources */,
 				07D53B1124CB1F0200195440 /* gramophone.usdz in Resources */,
 				07D53B1224CB1F0200195440 /* biplane.usdz in Resources */,
-				32871E1429DAEEC2004CD064 /* scaun1.usdz in Resources */,
-				32F0688A29DA3D4800756F48 /* pat1.usdz in Resources */,
+				32CAF7D829ED7ECA00725D76 /* pat2.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +454,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		07D53AE124CB177B00195440 /* Build configuration list for PBXProject "ModelPicker2" */ = {
+		07D53AE124CB177B00195440 /* Build configuration list for PBXProject "Furnify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07D53AF324CB177B00195440 /* Debug */,

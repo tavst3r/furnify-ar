@@ -29,14 +29,19 @@ struct ContentView: View {
     // MARK: Body
     
     var body: some View {
-        VStack {
+        VStack{
             Button(role: .destructive) {
                            shouldRemoveAllModels = true
                        } label: {
                            HStack {
                                Image(systemName: "trash")
-                               Text("Remove All")
+                               Text("Clear the scene")
                            }
+                           .foregroundColor(.white) // set the text and icon color to white
+                             .frame(maxWidth: 200) // set the HStack to occupy the full width
+                             .padding() // add some padding around the content
+                             .background(Color.red) // set the background color to red
+                             .cornerRadius(25) // round the corners of the button
                        }
             ZStack(alignment: .bottom) {
                 ARViewRepresentable(
@@ -60,6 +65,7 @@ struct ContentView: View {
             }
         }
     }
+    
 }
 
 // MARK: - Preview

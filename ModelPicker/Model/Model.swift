@@ -24,7 +24,9 @@ class Model {
            "wateringcan",
            "wheelbarrow",
            "pat1",
-           "scaun1"
+           "scaun1",
+           "pat2",
+           "masa1"
        ]
     
     var modelName: String
