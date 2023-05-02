@@ -26,7 +26,8 @@ class Model {
            "pat1",
            "scaun1",
            "pat2",
-           "masa1"
+           "masa1",
+           "scaun3"
        ]
     
     var modelName: String

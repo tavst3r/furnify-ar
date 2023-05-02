@@ -11,6 +11,7 @@ struct ModelPickerView: View {
     // MARK: - Properties
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
+    @State private var shouldRemoveAllModels = false
     
     var models: [Model]
     
@@ -23,28 +24,28 @@ struct ModelPickerView: View {
             self.models = models
         }
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 30) {
-                ForEach(models, id: \.self) { model in
-                    Button {
-                        print("Picked model: \(model.modelName)")
-                        selectedModel = model
-                        isPlacementEnabled = true
-                    } label: {
-                        Image(uiImage: model.image)
-                            .resizable()
-                            .frame(height: 80)
-                            .aspectRatio(1/1, contentMode: .fit)
-                            .background( Color.white)
-                            .cornerRadius(12)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 30) {
+                    ForEach(models, id: \.self) { model in
+                        Button {
+                            print("Picked model: \(model.modelName)")
+                            selectedModel = model
+                            isPlacementEnabled = true
+                        } label: {
+                            Image(uiImage: model.image)
+                                .resizable()
+                                .frame(height: 80)
+                                .aspectRatio(1/1, contentMode: .fit)
+                                .background( Color.white)
+                                .cornerRadius(12)
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
-                    .buttonStyle(PlainButtonStyle())
                 }
+                .background(Color.gray.opacity(0.5))
+                
             }
-            .background(Color.red.opacity(0.5))
-            
-        }
-        .padding(10)
+            .padding(.bottom, 120)
     }
 }
 //

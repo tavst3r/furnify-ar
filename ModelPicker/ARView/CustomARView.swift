@@ -38,7 +38,7 @@ private extension CustomARView {
     func setupARView() {
 
         // Uncomment to user ".nonAR" camera.
-        //useNonARCameraSample()
+//        useNonARCameraSample()
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.horizontal, .vertical]
         config.environmentTexturing = .automatic

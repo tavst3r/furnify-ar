@@ -14,7 +14,8 @@ struct ModelPickerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            AppTabBarView()
+                .ignoresSafeArea(.keyboard)
         }
     }
 }
