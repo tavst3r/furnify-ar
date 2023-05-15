@@ -7,29 +7,35 @@
 
 import SwiftUI
 
-extension CustomTabBarView {
-     
-    private func tabView2(tab:TabBarItem) -> some View {
-           VStack{
-               Image( localSelection == tab ? tab.fillIcon : tab.iconName)
-                   .font(.subheadline)
-               Text(tab.title)
-                   .font(.system(size: 10, weight: .semibold, design: .default))
-           }
-           .foregroundColor( localSelection == tab ? tab.color : Color.gray)
-           .padding(.vertical, 8)
-           .frame(maxWidth: .infinity)
-           .background(
-            ZStack{
-                if localSelection == tab {
-                RoundedRectangle(cornerRadius: 10)
-                        .fill(tab.color.opacity(0.2))
-                        .matchedGeometryEffect(id: "background_rectangle", in: namespace)
+struct CustomTabBarView: View {
+    
+    let tabs: [TabBarItem]
+    @Binding var selection: TabBarItem
+    @Namespace private var namespace
+    @State var localSelection: TabBarItem
+    
+    var body: some View {
+        tabBarVersion2
+            .onChange(of: selection, perform: { value in
+                withAnimation(.easeInOut) {
+                    localSelection = value
                 }
-                }
-            )
-       }
+            })
+    }
 }
+    struct CustomTabBarView_Previews: PreviewProvider {
+        
+        static let tabs: [TabBarItem] = [
+            .home,.favourites,.cart,.profile
+        ]
+        
+        static var previews: some View {
+            VStack {
+                Spacer()
+                CustomTabBarView(tabs: tabs, selection: .constant(tabs.first!), localSelection: tabs.first!)
+            }
+        }
+    }
 
 extension CustomTabBarView {
     
@@ -63,44 +69,32 @@ extension CustomTabBarView {
     
     private func switchToTab(tab: TabBarItem) {
         selection = tab
-
-//        withAnimation(.easeInOut) {
-//            selection = tab
-//        }
-        
     }
     
 }
 
-struct CustomTabBarView: View {
-    
-    let tabs: [TabBarItem]
-    @Binding var selection: TabBarItem
-    @Namespace private var namespace
-    @State var localSelection: TabBarItem
-    
-    var body: some View {
-        tabBarVersion2
-            .onChange(of: selection, perform: { value in
-                withAnimation(.easeInOut) {
-                    localSelection = value
+extension CustomTabBarView {
+     
+    private func tabView2(tab:TabBarItem) -> some View {
+           VStack{
+               Image( localSelection == tab ? tab.fillIcon : tab.iconName)
+                   .font(.subheadline)
+               Text(tab.title)
+                   .font(.system(size: 10, weight: .semibold, design: .default))
+           }
+           .foregroundColor( localSelection == tab ? tab.color : Color.gray)
+           .padding(.vertical, 8)
+           .frame(maxWidth: .infinity)
+           .background(
+            ZStack{
+                if localSelection == tab {
+                RoundedRectangle(cornerRadius: 10)
+                        .fill(tab.color.opacity(0.2))
+                        .matchedGeometryEffect(id: "background_rectangle", in: namespace)
                 }
-            })
-    }
-    
-    struct CustomTabBarView_Previews: PreviewProvider {
-        
-        static let tabs: [TabBarItem] = [
-            .home,.favourites,.cart,.profile
-        ]
-        
-        static var previews: some View {
-            VStack {
-                Spacer()
-                CustomTabBarView(tabs: tabs, selection: .constant(tabs.first!), localSelection: tabs.first!)
-            }
-        }
-    }
+                }
+            )
+       }
     
     private var tabBarVersion2: some View {
            HStack{
@@ -113,13 +107,13 @@ struct CustomTabBarView: View {
                    }
                    .padding(6)
                    .background(Color.white
-                    .ignoresSafeArea(.keyboard, edges:.bottom)
-                   )
+                    .ignoresSafeArea(.keyboard, edges:.bottom))
                    .cornerRadius(20)
                    .shadow(color: .black.opacity(0.3), radius: 10, x: 5, y: 5)
                    .padding(.horizontal)
        }
-    
 }
+
+
 
 

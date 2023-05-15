@@ -7,7 +7,20 @@
 
 import SwiftUI
 
+@MainActor
+final class ProfileViewModel: ObservableObject {
+    
+    func signOut() throws {
+       try AuthenticationManager.shared.signOut()
+    }
+}
+
 struct ProfilePage: View {
+    
+    @StateObject private var viewModel = ProfileViewModel()
+    @Binding var showSignInView: Bool
+    
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -24,10 +37,11 @@ struct ProfilePage: View {
                             Image("ProfileImage")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 100, height: 100)
+                                .frame(width: 60, height: 60)
                                 .clipShape(Circle())
-                                .offset(y: -60)
-                                .padding(.bottom, -60)
+                                .offset(y: -30)
+                                .padding(.bottom, -40)
+
                             
                             Text("Jane Doe")
                                 .font(.system(size:20))
@@ -39,18 +53,18 @@ struct ProfilePage: View {
                                     .foregroundColor(.gray)
                                     .rotationEffect(.init(degrees: 180))
                                 
-                                Text("Address: 43 Oxford Road\nM13 4GR\nManchester, UK")
+                                Text("43 Oxford Road\nM13 4GR\nManchester, UK")
                                     .font(.system(size:15))
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                         }
-                        .padding([.horizontal,.bottom,.top])
+                        .padding([.horizontal,.bottom])
                         .background(
                             Color.white
                                 .cornerRadius(12)
                         )
                         .padding()
-                        .padding(.top, 40)
+                        .padding(.top, 20)
                         
                         //Custom navigation links...
                         CustomNavigationLink(title: "Edit Profile"){
@@ -96,16 +110,27 @@ struct ProfilePage: View {
                     Spacer(minLength: 30)
                     
                         HStack{
-                            
-                            Text("Log out")
-                                .font(.system(size: 17))
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                        }
-                        .frame(width: 200)
-                        .padding()
-                        .background(Color.red)
-                        .cornerRadius(12)
+                            Button {
+                                Task {
+                                    do{
+                                        try viewModel.signOut()
+                                        showSignInView = true
+                                    } catch {
+                                        print(error)
+                                    }
+                                }
+                            }
+                        label: {
+                                Text("Log out")
+                                    .font(.system(size: 17))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: 200)
+                            .padding()
+                            .background(Color.red)
+                            .cornerRadius(12)
+                            }
                 }
             }
             .navigationBarHidden(true)
@@ -116,6 +141,7 @@ struct ProfilePage: View {
             )
         }
     }
+
     
     @ViewBuilder
     func CustomNavigationLink<Detail: View>(title: String,@ViewBuilder content: @escaping ()->Detail)->some View{
@@ -147,6 +173,6 @@ struct ProfilePage: View {
 
 struct ProfilePage_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePage()
+        ProfilePage(showSignInView:  .constant(false))
     }
 }

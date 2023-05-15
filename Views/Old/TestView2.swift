@@ -1,10 +1,10 @@
+
 //
 //  TestView2.swift
 //  ModelPicker-test-2
 //
 //  Created by Tavi Diaconu on 03.04.2023.
 //
-
 import SwiftUI
 
 struct TestView2: View {

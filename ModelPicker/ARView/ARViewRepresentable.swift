@@ -16,6 +16,7 @@ struct ARViewRepresentable: UIViewRepresentable {
     // MARK: - UIViewRepresentable
     func makeUIView(context: Context) -> ARView {
         CustomARView(frame: .zero)
+        
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {

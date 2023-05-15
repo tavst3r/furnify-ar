@@ -4,7 +4,6 @@
 //
 //  Created by Tavi Diaconu on 30.04.2023.
 //
-
 import SwiftUI
 
 struct HomeScreen2: View {

@@ -14,20 +14,14 @@ class Model {
     // MARK: - Properties
 
     static let modelNames = [
-           "biplane",
-           "drummer",
-           "fender",
-           "gramophone",
-           "retrotv",
-           "robot",
-           "teapot",
-           "wateringcan",
-           "wheelbarrow",
            "pat1",
            "scaun1",
            "pat2",
            "masa1",
-           "scaun3"
+           "scaun3",
+           "pat3",
+           "pat4",
+           "pat5"
        ]
     
     var modelName: String

@@ -18,7 +18,7 @@ struct ModelPickerView: View {
     // MARK: Body
     
     init(isPlacementEnabled: Binding<Bool>, selectedModel: Binding<Model?>, models: [Model]) {
-            UIScrollView.appearance().bounces = false
+//            UIScrollView.appearance().bounces = false
             self._isPlacementEnabled = isPlacementEnabled
             self._selectedModel = selectedModel
             self.models = models

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum TabBarItem: Hashable {
-case home, favourites, cart, profile, ar
+    case home, favourites, cart, profile, ar
     
     var iconName: String {
         switch self {

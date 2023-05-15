@@ -17,8 +17,16 @@ class HomeViewModel: ObservableObject {
     
 //    Sample products...
     @Published var products: [Product] = [
-        Product(type: .Beds, title: "Velluto Bed", subtitle: "Series 1", price: "1200 RON", productImage: "pat2"),
-        Product(type: .Beds, title: "Manhattan Bed", subtitle: "Series 2", price: "1500 RON", productImage: "pat1")
+        Product(type: .Beds, title: "Soho Bed", subtitle: "Series 1", price: "1500 RON", productImage: "pat1"),
+        Product(type: .Beds, title: "Manhattan Bed", subtitle: "Series 2", price: "1200 RON", productImage: "pat2"),
+        Product(type: .Beds, title: "Avalon Bed", subtitle: "Series 2", price: "1800 RON", productImage: "pat3"),
+        Product(type: .Beds, title: "Riviera Bed", subtitle: "Series 2", price: "2000 RON", productImage: "pat4"),
+        Product(type: .Beds, title: "Sanctum Bed", subtitle: "Series 2", price: "2000 RON", productImage: "pat5"),
+        
+        //
+        Product(type: .Chairs, title: "Earnes Chair", subtitle: "Series 1", price: "200 RON", productImage: "scaun1"),
+        Product(type: .Chairs, title: "Wingback Chair", subtitle: "Series 1", price: "350 RON", productImage: "scaun3")
+        
     ]
     
     //Filtered products...

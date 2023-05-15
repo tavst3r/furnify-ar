@@ -6,17 +6,36 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct ModelPickerApp: App {
+    
+@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
     // MARK: - Properties
     
     var body: some Scene {
         WindowGroup {
-            AppTabBarView()
-                .ignoresSafeArea(.keyboard)
+            NavigationStack{
+                RootView()
+                    .ignoresSafeArea(.keyboard)
+            }
         }
     }
 }
+
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+
+    FirebaseApp.configure()
+
+    return true
+
+  }
+
+}
+
 //

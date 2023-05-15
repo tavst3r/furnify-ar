@@ -16,15 +16,16 @@ struct CustomTabBarContainerView<Content:View>: View {
     init(selection: Binding<TabBarItem>, @ViewBuilder content: () -> Content) {
         self._selection = selection
         self.content = content()
-        
     }
     
     var body: some View {
         ZStack(alignment: .bottom) {
             content
-                .ignoresSafeArea(edges:.bottom)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.bottom)
+            
             CustomTabBarView(tabs: tabs, selection: $selection, localSelection: selection)
-
+            
         }
         .onPreferenceChange(TabBarItemsPreferenceKey.self, perform: { value in
             self.tabs = value
@@ -32,16 +33,15 @@ struct CustomTabBarContainerView<Content:View>: View {
     }
 }
 
-
 struct CustomTabBarContainerView_Previews: PreviewProvider {
     
     static let tabs: [TabBarItem] = [
         .home, .favourites, .cart, .profile, .ar
-            ]
-    
-    static var previews: some View {
-        CustomTabBarContainerView(selection: .constant(tabs.first!)) {
-            Color.red
+    ]
+        
+        static var previews: some View {
+            CustomTabBarContainerView(selection: .constant(tabs.first!)) {
+                Color.red
+            }
         }
     }
-}
