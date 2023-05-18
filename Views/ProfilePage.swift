@@ -10,6 +10,14 @@ import SwiftUI
 @MainActor
 final class ProfileViewModel: ObservableObject {
     
+    @Published private(set) var user: DBUser? = nil
+    
+    
+    func loadCurrentUser() async throws {
+        let authDataResult = try AuthenticationManager.shared.getAuthenticatedUser()
+        self.user = try await UserManager.shared.getUser(userId: authDataResult.uid)
+    }
+    
     func signOut() throws {
        try AuthenticationManager.shared.signOut()
     }
@@ -19,6 +27,9 @@ struct ProfilePage: View {
     
     @StateObject private var viewModel = ProfileViewModel()
     @Binding var showSignInView: Bool
+    
+    @State private var isPresentingConfirm: Bool = false
+
     
     
     var body: some View {
@@ -111,14 +122,15 @@ struct ProfilePage: View {
                     
                         HStack{
                             Button {
-                                Task {
-                                    do{
-                                        try viewModel.signOut()
-                                        showSignInView = true
-                                    } catch {
-                                        print(error)
-                                    }
-                                }
+//                                Task {
+//                                    do{
+//                                        try viewModel.signOut()
+//                                        showSignInView = true
+//                                    } catch {
+//                                        print(error)
+//                                    }
+//                                }
+                                isPresentingConfirm = true
                             }
                         label: {
                                 Text("Log out")
@@ -126,6 +138,22 @@ struct ProfilePage: View {
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                             }
+                            
+                        .confirmationDialog("Are you sure?",
+                          isPresented: $isPresentingConfirm) {
+                            Button("Log out", role: .destructive) {
+                                do{
+                                    try viewModel.signOut()
+                                    showSignInView = true
+                                } catch {
+                                    print(error)
+                                }
+                            }
+                        } message: {
+                          Text("Are you sure you want to log out?")
+                        }
+
+                            
                             .frame(width: 200)
                             .padding()
                             .background(Color.red)

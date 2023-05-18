@@ -39,7 +39,7 @@ struct AppTabBarView: View {
                 .environmentObject(sharedData)
                     .tabBarItem(tab: .cart, selection: $tabSelection)
 
-            ProfilePage(showSignInView:  .constant(false))
+            ProfilePage(showSignInView: $showSignInView)
                     .tabBarItem(tab: .profile, selection: $tabSelection)
         }
         .ignoresSafeArea(.keyboard, edges: .bottom)
