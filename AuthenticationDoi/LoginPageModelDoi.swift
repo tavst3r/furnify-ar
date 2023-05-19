@@ -32,8 +32,8 @@ class LoginPageModelDoi: ObservableObject {
             print("No email or password found.")
             DispatchQueue.main.async {
                 self.showAlert = true
-                self.alertTitle = "Error"
-                self.alertMessage = "Invalid credentials"
+                self.alertTitle = "Oops!"
+                self.alertMessage = "Invalid credentials. Please check your username and password."
             }
             return
         }
@@ -47,42 +47,13 @@ class LoginPageModelDoi: ObservableObject {
         } catch {
             DispatchQueue.main.async {
                 self.showAlert = true
-                self.alertTitle = "Error"
-                self.alertMessage = "Invalid credentials"
+                self.alertTitle = "Oops!"
+                self.alertMessage = "Invalid credentials. Please check your username and password."
             }
 
         }
     }
     
-        
-//        if self.email != ""{
-//
-//            if self.password == self.reEnterPassword{
-//
-//                Auth.auth().createUser(withEmail: self.email, password: self.password) { (res, err) in
-//                    if err != nil{
-//
-//                        self.error = err!.localizedDescription
-//                        self.alert.toggle()
-//                        return
-//                    }
-//                    self.persistImageToStorage()
-//                    self.error = "Account was created successfully"
-//                    self.alert.toggle()
-//                    print("success")
-//                }
-//            }
-//            else{
-//                self.error = "Password mismatch"
-//                self.alert.toggle()
-//            }
-//        }
-//        else{
-//
-//            self.error = "Please fill all the contents properly"
-//            self.alert.toggle()
-//        }
-//    }
     //Register call...
     func Register() async throws {
         guard !email.isEmpty, !password.isEmpty, !re_Enter_Password.isEmpty else {
@@ -99,14 +70,23 @@ class LoginPageModelDoi: ObservableObject {
             
             DispatchQueue.main.async {
                 self.showAlert = true
+                self.alertTitle = "Oops!"
+                self.alertMessage = "Passwords do not match."
             }
             return
         }
 
         do {
-            try await AuthenticationManager.shared.createUser(email: email, password: password)
+            let authDataResult = try await AuthenticationManager.shared.createUser(email: email, password: password)
+            let user = DBUser(auth: authDataResult)
+            try await UserManager.shared.createNewUser(user: user)
             // User successfully created, you can handle the result here
-            print("User signed up successfully.")
+            DispatchQueue.main.async {
+                print("User signed up successfully.")
+                self.showAlert = true
+                self.alertTitle = "Account created!"
+                self.alertMessage = "Your account has been successfully created."
+            }
         } catch {
             // An error occurred during sign up, handle the error here
             print("Error signing up: \(error.localizedDescription)")
@@ -116,32 +96,8 @@ class LoginPageModelDoi: ObservableObject {
         }
     }
 
-        // Check credentials...
-    
-//    func checkIfUserIsLoggedIn(signedId: Bool) {
-//        if Auth.auth().currentUser?.uid != nil {
-//            signedId = true
-//            }else{
-//             signedId = false
-//            }
-//    }
-    
-    
-
-    
     func ForgotPassowrd(){
         //Do action here...
-    }
-    
-    func showAlert(title: String, message: String) {
-        // Display the alert here using SwiftUI's alert mechanism
-        // For example, you can have an @State property to control the alert presentation in the ContentView
-        // and update that property here to trigger the alert
-        
-        // Example:
-        // alertTitle = title
-        // alertMessage = message
-        // showAlert = true
     }
 }
 

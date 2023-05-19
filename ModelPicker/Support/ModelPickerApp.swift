@@ -10,32 +10,32 @@ import Firebase
 
 @main
 struct ModelPickerApp: App {
-    
-@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @State private var isLoading = true
 
-    // MARK: - Properties
-    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
     var body: some Scene {
         WindowGroup {
-            NavigationStack{
-                RootView()
-                    .ignoresSafeArea(.keyboard)
+            if isLoading {
+                SplashView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            isLoading = false
+                        }
+                    }
+            } else {
+                NavigationStack {
+                    RootView()
+                        .ignoresSafeArea(.keyboard)
+                }
             }
         }
     }
 }
 
-
 class AppDelegate: NSObject, UIApplicationDelegate {
-
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-
-    FirebaseApp.configure()
-
-    return true
-
-  }
-
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        return true
+    }
 }
-
-//

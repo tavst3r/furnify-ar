@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "furnify-logo1.pdf",
+      "filename" : "bglogin3.png",
       "idiom" : "universal"
     }
   ],
@@ -11,6 +11,6 @@
   },
   "properties" : {
     "compression-type" : "lossless",
-    "template-rendering-intent" : "template"
+    "template-rendering-intent" : "original"
   }
 }

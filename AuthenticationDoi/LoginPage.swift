@@ -15,13 +15,13 @@ struct LoginPage: View {
     var body: some View {
         VStack{
                 
-                Text("Hello!")
-                    .font(.system(size: 55).bold())
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                        .frame(height: getRect().height / 3.5)
-                        .padding(.leading,25)
-                
+//                Text("Hello!")
+//                    .font(.system(size: 55).bold())
+//                    .foregroundColor(.white)
+//                    .frame(maxWidth: .infinity, alignment: .leading)
+//                        .frame(height: getRect().height / 3.5)
+//                        .padding(.leading,25)
+                Spacer(minLength: 300)
             ScrollView(.vertical, showsIndicators: false){
              
                 //Login form
@@ -139,6 +139,7 @@ struct LoginPage: View {
                 .padding(30)
                 
             }
+            .scrollDismissesKeyboard(.interactively)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(
                 Color.white
@@ -147,12 +148,13 @@ struct LoginPage: View {
             )
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("bglogin")
+        .background(Image("bglogin3")
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(minWidth: 0, maxWidth: .infinity)
             .edgesIgnoringSafeArea(.all)
         )
+        .ignoresSafeArea(.keyboard)
         .alert(isPresented: $loginData.showAlert) {
             Alert(title: Text(loginData.alertTitle), message: Text(loginData.alertMessage), dismissButton: .cancel())
         }
