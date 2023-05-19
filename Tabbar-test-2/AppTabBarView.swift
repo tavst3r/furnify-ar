@@ -14,8 +14,6 @@ import SwiftUI
 
 struct AppTabBarView: View {
     
-    @Binding var showSignInView: Bool
-    
     @StateObject var sharedData: SharedDataModel = SharedDataModel()
     @State private var selection: String = "home"
     @State private var tabSelection: TabBarItem = .home
@@ -39,7 +37,7 @@ struct AppTabBarView: View {
                 .environmentObject(sharedData)
                     .tabBarItem(tab: .cart, selection: $tabSelection)
 
-            ProfilePage(showSignInView: $showSignInView)
+            ProfilePage()
                     .tabBarItem(tab: .profile, selection: $tabSelection)
         }
         .ignoresSafeArea(.keyboard, edges: .bottom)
@@ -62,7 +60,7 @@ struct AppTabBarView: View {
 struct AppTabBarView_Previews: PreviewProvider {
     
     static var previews: some View {
-        AppTabBarView(showSignInView: .constant(false))
+        AppTabBarView()
     }
 }
 

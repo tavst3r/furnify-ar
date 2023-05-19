@@ -1,36 +1,31 @@
+////
+////  RootView.swift
+////  ModelPicker-test-2
+////
+////  Created by Tavi Diaconu on 11.05.2023.
+////
 //
-//  RootView.swift
-//  ModelPicker-test-2
+//import SwiftUI
 //
-//  Created by Tavi Diaconu on 11.05.2023.
+//struct RootView: View {
 //
-
-import SwiftUI
-
-struct RootView: View {
-    
-    @State private var showSignInView: Bool = false
-    
-    var body: some View {
-        ZStack{
-            NavigationStack{
-                AppTabBarView(showSignInView: $showSignInView)
-            }
-        }
-        .onAppear{
-            let authUser = try?AuthenticationManager.shared.getAuthenticatedUser()
-            self.showSignInView = authUser == nil
-        }
-        .fullScreenCover(isPresented: $showSignInView) {
-            NavigationStack {
-                LoginPage(showSignInView: $showSignInView)
-            }
-        }
-    }
-}
-
-struct RootView_Previews: PreviewProvider {
-    static var previews: some View {
-        RootView()
-    }
-}
+//
+//    var body: some View {
+//        ZStack{
+//            NavigationStack{
+//                AppTabBarView()
+//            }
+//        }
+//        .fullScreenCover(isPresented: $showSignInView) {
+//            NavigationStack {
+//                LoginPage()
+//            }
+//        }
+//    }
+//}
+//
+//struct RootView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RootView()
+//    }
+//}

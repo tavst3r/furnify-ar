@@ -21,10 +21,6 @@
 		3227B4012A041BDB00058C37 /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3227B4002A041BDB00058C37 /* TestView2.swift */; };
 		3227B4032A041C0600058C37 /* HomeScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3227B4022A041C0600058C37 /* HomeScreen2.swift */; };
 		3228411C2A0057970088F255 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228411B2A0057970088F255 /* ProfilePage.swift */; };
-		322E70AB29F88EA300F72DD7 /* scaun1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 322E70AA29F88EA300F72DD7 /* scaun1.usdz */; };
-		32315D8629FC88A4005B5A1D /* Sygma Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32315D8429FC88A4005B5A1D /* Sygma Bold.ttf */; };
-		32315D8729FC88A4005B5A1D /* Sygma.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32315D8529FC88A4005B5A1D /* Sygma.ttf */; };
-		3235D44A29EDFB2500013EF1 /* scaun3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3235D44929EDFB2500013EF1 /* scaun3.usdz */; };
 		324E240D2A0AFC1E009C97E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 324E240C2A0AFC1E009C97E3 /* GoogleService-Info.plist */; };
 		324E24102A0AFD65009C97E3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 324E240F2A0AFD65009C97E3 /* FirebaseAnalytics */; };
 		324E24122A0AFD65009C97E3 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 324E24112A0AFD65009C97E3 /* FirebaseAnalyticsSwift */; };
@@ -59,9 +55,6 @@
 		32BBA20529FE871F00BE230C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBA20429FE871F00BE230C /* HomeViewModel.swift */; };
 		32C6C77D29FF217300C67550 /* HomesScreen22.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6C77C29FF217300C67550 /* HomesScreen22.swift */; };
 		32C7B65F2A03D8AA00561A6D /* CartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C7B65E2A03D8AA00561A6D /* CartPage.swift */; };
-		32CAF7D829ED7ECA00725D76 /* pat2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 32CAF7D729ED7ECA00725D76 /* pat2.usdz */; };
-		32CAF7DA29ED7EDB00725D76 /* pat1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 32CAF7D929ED7EDB00725D76 /* pat1.usdz */; };
-		32CAF7DE29ED7EFA00725D76 /* masa1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 32CAF7DD29ED7EFA00725D76 /* masa1.usdz */; };
 		32CC4E8A29E42F4B0095EA52 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CC4E8929E42F4B0095EA52 /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,10 +74,6 @@
 		3227B4002A041BDB00058C37 /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 		3227B4022A041C0600058C37 /* HomeScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen2.swift; sourceTree = "<group>"; };
 		3228411B2A0057970088F255 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
-		322E70AA29F88EA300F72DD7 /* scaun1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = scaun1.usdz; path = "../../../../Disertatie/Modele 3D/scaune/scaun1/scaun1.usdz"; sourceTree = "<group>"; };
-		32315D8429FC88A4005B5A1D /* Sygma Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sygma Bold.ttf"; path = "../../../Downloads/Sygma Free/Sygma Bold.ttf"; sourceTree = "<group>"; };
-		32315D8529FC88A4005B5A1D /* Sygma.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Sygma.ttf; path = "../../../Downloads/Sygma Free/Sygma.ttf"; sourceTree = "<group>"; };
-		3235D44929EDFB2500013EF1 /* scaun3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = scaun3.usdz; path = "../../../../Disertatie/Modele 3D/scaune/scaun3/scaun3.usdz"; sourceTree = "<group>"; };
 		324E240C2A0AFC1E009C97E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		324E8CFB2A158B5E002041CB /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		325361182A0CEBCE005F5D28 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -114,9 +103,6 @@
 		32BBA20429FE871F00BE230C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		32C6C77C29FF217300C67550 /* HomesScreen22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomesScreen22.swift; sourceTree = "<group>"; };
 		32C7B65E2A03D8AA00561A6D /* CartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPage.swift; sourceTree = "<group>"; };
-		32CAF7D729ED7ECA00725D76 /* pat2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = pat2.usdz; path = "../../../../Disertatie/Modele 3D/paturi/pat2/pat2.usdz"; sourceTree = "<group>"; };
-		32CAF7D929ED7EDB00725D76 /* pat1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = pat1.usdz; path = "../../../../Disertatie/Modele 3D/paturi/pat1/pat1.usdz"; sourceTree = "<group>"; };
-		32CAF7DD29ED7EFA00725D76 /* masa1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = masa1.usdz; path = "../../../../Disertatie/Modele 3D/mese/masa1/masa1.usdz"; sourceTree = "<group>"; };
 		32CC4E8929E42F4B0095EA52 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,14 +203,9 @@
 		07D53B0024CB1BA300195440 /* 3DModels */ = {
 			isa = PBXGroup;
 			children = (
-				32CAF7DD29ED7EFA00725D76 /* masa1.usdz */,
-				32CAF7D929ED7EDB00725D76 /* pat1.usdz */,
-				32CAF7D729ED7ECA00725D76 /* pat2.usdz */,
 				32B3E2172A0506BF00256441 /* pat3.usdz */,
 				32B3E2192A05084900256441 /* pat4.usdz */,
 				329684052A0571730079B51A /* pat5.usdz */,
-				322E70AA29F88EA300F72DD7 /* scaun1.usdz */,
-				3235D44929EDFB2500013EF1 /* scaun3.usdz */,
 			);
 			path = 3DModels;
 			sourceTree = "<group>";
@@ -250,8 +231,6 @@
 		32315D7D29FC876F005B5A1D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				32315D8429FC88A4005B5A1D /* Sygma Bold.ttf */,
-				32315D8529FC88A4005B5A1D /* Sygma.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -403,17 +382,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				324E240D2A0AFC1E009C97E3 /* GoogleService-Info.plist in Resources */,
-				32CAF7DA29ED7EDB00725D76 /* pat1.usdz in Resources */,
 				07D53AF124CB177B00195440 /* Preview Assets.xcassets in Resources */,
 				07D53AEE24CB177B00195440 /* Assets.xcassets in Resources */,
-				32CAF7DE29ED7EFA00725D76 /* masa1.usdz in Resources */,
-				32315D8729FC88A4005B5A1D /* Sygma.ttf in Resources */,
-				32315D8629FC88A4005B5A1D /* Sygma Bold.ttf in Resources */,
-				322E70AB29F88EA300F72DD7 /* scaun1.usdz in Resources */,
 				32B3E2182A0506BF00256441 /* pat3.usdz in Resources */,
 				32B3E21A2A05084900256441 /* pat4.usdz in Resources */,
-				3235D44A29EDFB2500013EF1 /* scaun3.usdz in Resources */,
-				32CAF7D829ED7ECA00725D76 /* pat2.usdz in Resources */,
 				329684062A0571730079B51A /* pat5.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

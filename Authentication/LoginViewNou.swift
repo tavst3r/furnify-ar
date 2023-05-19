@@ -37,7 +37,6 @@ struct LoginViewNou: View {
         
         @State var showPassword: Bool = false
         @ObservedObject private var viewModel = LogInEmailViewModel()
-        @Binding var showSignInView: Bool
     
     var body: some View {
             VStack{
@@ -79,7 +78,7 @@ struct LoginViewNou: View {
                                 Task{
                                     do{
                                         try await viewModel.signUp()
-                                        showSignInView = false
+//                                        showSignInView = false
                                         return
                                     } catch {
                                         print(error)
@@ -87,7 +86,7 @@ struct LoginViewNou: View {
                                     
                                     do{
                                         try await viewModel.logIn()
-                                        showSignInView = false
+//                                        showSignInView = false
                                         return
                                     } catch {
                                         print(error)
@@ -151,6 +150,6 @@ struct LoginViewNou: View {
 
 struct LoginViewNou_Previews: PreviewProvider {
     static var previews: some View {
-        LoginViewNou(showSignInView: .constant(false))
+        LoginViewNou()
     }
 }

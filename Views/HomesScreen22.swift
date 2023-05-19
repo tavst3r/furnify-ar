@@ -253,7 +253,7 @@ struct HomesScreen22: View {
 
 struct HomesScreen22_Previews: PreviewProvider {
     static var previews: some View {
-        AppTabBarView(showSignInView: .constant(false))
+        AppTabBarView()
     }
 }
 

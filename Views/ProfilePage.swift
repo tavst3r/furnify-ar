@@ -11,7 +11,7 @@ import SwiftUI
 final class ProfileViewModel: ObservableObject {
     
     @Published private(set) var user: DBUser? = nil
-    
+    @AppStorage("signedId") private var signedIn: Bool = false
     
     func loadCurrentUser() async throws {
         let authDataResult = try AuthenticationManager.shared.getAuthenticatedUser()
@@ -20,13 +20,14 @@ final class ProfileViewModel: ObservableObject {
     
     func signOut() throws {
        try AuthenticationManager.shared.signOut()
+        self.signedIn = false
+        
     }
 }
 
 struct ProfilePage: View {
     
     @StateObject private var viewModel = ProfileViewModel()
-    @Binding var showSignInView: Bool
     
     @State private var isPresentingConfirm: Bool = false
 
@@ -144,7 +145,6 @@ struct ProfilePage: View {
                             Button("Log out", role: .destructive) {
                                 do{
                                     try viewModel.signOut()
-                                    showSignInView = true
                                 } catch {
                                     print(error)
                                 }
@@ -201,6 +201,6 @@ struct ProfilePage: View {
 
 struct ProfilePage_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePage(showSignInView:  .constant(false))
+        ProfilePage()
     }
 }

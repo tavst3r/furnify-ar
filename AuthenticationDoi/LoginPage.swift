@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LoginPage: View {
     @StateObject var loginData: LoginPageModelDoi = LoginPageModelDoi()
-    @Binding var showSignInView: Bool
 
     
     var body: some View {
@@ -94,11 +93,11 @@ struct LoginPage: View {
                             Task {
                                 do {
                                     try await loginData.Login()
-                                    if loginData.loggedIn {
-                                        DispatchQueue.main.async {
-                                            showSignInView = false
-                                        }
-                                    }
+//                                    if loginData.loggedIn {
+//                                        DispatchQueue.main.async {
+//                                            showSignInView = false
+//                                        }
+//                                    } 1.Scos
                                 } catch {
                                     print(error)
                                 }
@@ -219,6 +218,6 @@ struct LoginPage: View {
 
 struct LoginPage_Previews: PreviewProvider {
     static var previews: some View {
-        LoginPage(showSignInView: .constant(false))
+        LoginPage()
     }
 }

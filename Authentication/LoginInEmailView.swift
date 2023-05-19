@@ -12,7 +12,7 @@ import SwiftUI
 struct LoginInEmailView: View {
 
     @StateObject private var viewModel = LogInEmailViewModel()
-    @Binding var showSignInView: Bool
+//    @Binding var showSignInView: Bool
 
     var body: some View {
         VStack{
@@ -30,7 +30,7 @@ struct LoginInEmailView: View {
                 Task{
                     do{
                         try await viewModel.signUp()
-                        showSignInView = false
+//                        showSignInView = false
                         return
                     } catch {
                         print(error)
@@ -38,7 +38,7 @@ struct LoginInEmailView: View {
 
                     do{
                         try await viewModel.logIn()
-                        showSignInView = false
+//                        showSignInView = false
                         return
                     } catch {
                         print(error)
@@ -65,7 +65,7 @@ struct LoginInEmailView: View {
     struct LogInEmailView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationStack{
-                LoginInEmailView(showSignInView: .constant(false))
+                LoginInEmailView()
             }
         }
     }

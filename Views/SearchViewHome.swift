@@ -214,7 +214,7 @@ struct SearchViewHome: View {
     struct SearchViewHome_Previews: PreviewProvider {
         static var previews: some View {
 
-            AppTabBarView(showSignInView: .constant(false))
+            AppTabBarView()
         }
     }
 

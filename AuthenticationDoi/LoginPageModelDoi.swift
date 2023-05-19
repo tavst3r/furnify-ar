@@ -14,7 +14,6 @@ class LoginPageModelDoi: ObservableObject {
     @Published var password : String = ""
     @Published var showPassword: Bool = false
     
-    @Published var loggedIn: Bool = false
 
     //Register
     @Published var registerUser: Bool = false 
@@ -23,8 +22,7 @@ class LoginPageModelDoi: ObservableObject {
     @Published var showAlert: Bool = false
     @Published var alertTitle: String = ""
     @Published var alertMessage: String = ""
-    
-    
+    @AppStorage("signedId") private var signedIn: Bool = false
     
     //Login call...
     func Login() async throws {
@@ -41,7 +39,7 @@ class LoginPageModelDoi: ObservableObject {
         do {
             try await AuthenticationManager.shared.signInUser(email: email, password: password)
             DispatchQueue.main.async {
-                  self.loggedIn = true
+                  self.signedIn = true
                 }
             
         } catch {

@@ -237,6 +237,6 @@ struct ProductDetailView_Previews: PreviewProvider {
 //        ProductDetailView(product: HomeViewModel().products[0])
 //            .environmentObject(SharedDataModel())
         
-        AppTabBarView(showSignInView: .constant(false))
+        AppTabBarView()
     }
 }
