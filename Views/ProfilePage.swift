@@ -121,16 +121,7 @@ struct ProfilePage: View {
                         
                     Spacer(minLength: 30)
                     
-                        HStack{
                             Button {
-//                                Task {
-//                                    do{
-//                                        try viewModel.signOut()
-//                                        showSignInView = true
-//                                    } catch {
-//                                        print(error)
-//                                    }
-//                                }
                                 isPresentingConfirm = true
                             }
                         label: {
@@ -138,8 +129,11 @@ struct ProfilePage: View {
                                     .font(.system(size: 17))
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
+                                    .frame(width: 200)
+                                    .padding()
+                                    .background(Color.red)
+                                    .cornerRadius(12)
                             }
-                            
                         .confirmationDialog("Are you sure?",
                           isPresented: $isPresentingConfirm) {
                             Button("Log out", role: .destructive) {
@@ -150,15 +144,8 @@ struct ProfilePage: View {
                                 }
                             }
                         } message: {
-                          Text("Are you sure you want to log out?")
+                            Text("Are you sure you want to log out?")
                         }
-
-                            
-                            .frame(width: 200)
-                            .padding()
-                            .background(Color.red)
-                            .cornerRadius(12)
-                            }
                 }
             }
             .navigationBarHidden(true)
